@@ -11,19 +11,21 @@ def number():
 	for i in range(2000,3200):
 		if i%7 == 0 and i%5 != 0:
 			mynumber.append(i)
-	print(mynumber)
+	print(mynumber,sep=',')
 
 
 def number1():
 	"""different option using generators and list comprehension"""
 
-	#Theory introduction
-	"""
-	
+	#[f(x) if condition else g(x) for x in sequence]
 
+	#[f(x) for x in sequence if condition]
+	mylist = [x for x in range(2000,3200) if x%7 == 0 and x%5 != 0]
+	print(mylist,sep = ',')
 
-	"""
 
 
 number()
+print()
+number1()
 
