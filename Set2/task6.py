@@ -16,14 +16,25 @@ The output of the program should be:
 import math as m
 
 class EquationSolver:
-	#Add feature to match functionality based on *args in
-	#standard function
-	#Values should be not put as a list
+
+	c = 50 #Class variable
+	h = 30
+
 	def __init__(self,*args):
 		self.args = args
 
-	def print_value(self):
-		print(list(self.args))
+	def calculate(self):
 
-myobject = EquationSolver(4,5,3,2,6)
+		return  [m.sqrt((2*self.c*d)/self.h) for d in self.args]
+
+	def print_value(self):
+
+		a = self.calculate()
+		for i in a:
+			if a.index(i) < len(a)-1:
+				print(round(i),end =', ')
+			else:
+				print(round(i),end ='')
+
+myobject = EquationSolver(100,150,180)
 myobject.print_value()
