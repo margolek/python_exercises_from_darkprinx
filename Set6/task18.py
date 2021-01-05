@@ -22,5 +22,14 @@ output:
 ABd1234@1
 None
 None
+"""
+import re
+def check_validity(password):
+
+	regex = re.compile(r'(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$#@])')
+	return [x if regex.search(x) and len(x) >= 6 and len(x) <= 12 else 'None' for x in password]
+user_input = input().split(',')
+a = check_validity(user_input)
+print(a)
 
 
